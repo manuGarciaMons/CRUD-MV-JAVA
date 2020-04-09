@@ -15,12 +15,21 @@
     <body>
         <div class="container">
             <div class="col-lg-6">
-                <h1>Agregar Persona</h1>
+                <h1>Agregar Empleado</h1>
                 <form action="Controlador">
                     DNI:<br>
                     <input class="form-control" type="text" name="txtDni"><br>
                     Nombres: <br>
                     <input class="form-control" type="text" name="txtNom"><br>
+                    Apellidos: <br>
+                    <input class="form-control" type="text" name="txtApe"><br>
+                    Cargo: <br>
+                    <input class="form-control" type="text" name="txtCar"><br>
+                    Sexo: <br>
+                    <select name="selSex" class="form-control">
+                        <option value="H">Hombre</option>
+                        <option value="M">Mujer</option>
+                    </select><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
                     <a href="Controlador?accion=listar">Regresar</a>
                 </form>

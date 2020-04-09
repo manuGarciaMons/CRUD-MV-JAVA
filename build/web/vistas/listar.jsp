@@ -1,8 +1,8 @@
 
 <%@page import="java.util.Iterator"%>
-<%@page import="Modelo.Persona"%>
+<%@page import="Modelo.Empleado"%>
 <%@page import="java.util.List"%>
-<%@page import="ModeloDAO.PersonaDAO"%>
+<%@page import="ModeloDAO.EmpleadoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Personas</h1>
+            <h1>Empleados</h1>
             <a class="btn btn-success" href="Controlador?accion=add">Agregar Nuevo</a>
             <br>
             <br>
@@ -23,26 +23,32 @@
                         <th class="text-center">ID</th>
                         <th class="text-center">DNI</th>
                         <th class="text-center">NOMBRES</th>
+                        <th class="text-center">APELLIDOS</th>
+                        <th class="text-center">CARGO</th>
+                        <th class="text-center">SEXO</th>
                         <th class="text-center">ACCIONES</th>
                     </tr>
                 </thead>
                 <%
-                    PersonaDAO dao=new PersonaDAO();
-                    List<Persona>list=dao.listar();
-                    Iterator<Persona>iter=list.iterator();
-                    Persona per=null;
+                    EmpleadoDAO dao = new EmpleadoDAO();
+                    List<Empleado>list=dao.listar();
+                    Iterator<Empleado>iter=list.iterator();
+                    Empleado emp = null;
                     while(iter.hasNext()){
-                        per=iter.next();
+                        emp = iter.next();
                     
                 %>
                 <tbody>
                     <tr>
-                        <td class="text-center"><%= per.getId()%></td>
-                        <td class="text-center"><%= per.getDni()%></td>
-                        <td><%= per.getNom()%></td>
+                        <td class="text-center"><%= emp.getId()%></td>
+                        <td class="text-center"><%= emp.getDni()%></td>
+                        <td><%= emp.getNom()%></td>
+                        <td><%= emp.getApe()%></td>
+                        <td><%= emp.getCar()%></td>
+                        <td><%= emp.getSex()%></td>
                         <td class="text-center">
-                            <a class="btn btn-warning" href="Controlador?accion=editar&id=<%= per.getId()%>">Editar</a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= per.getId()%>">Remove</a>
+                            <a class="btn btn-warning" href="Controlador?accion=editar&id=<%= emp.getId()%>">Editar</a>
+                            <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= emp.getId()%>">Remove</a>
                         </td>
                     </tr>
                     <%}%>

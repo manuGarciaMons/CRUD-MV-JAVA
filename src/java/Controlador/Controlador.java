@@ -1,8 +1,8 @@
 
 package Controlador;
 
-import Modelo.Persona;
-import ModeloDAO.PersonaDAO;
+import Modelo.Empleado;
+import ModeloDAO.EmpleadoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,8 +17,8 @@ public class Controlador extends HttpServlet {
     String listar="vistas/listar.jsp";
     String add="vistas/add.jsp";
     String edit="vistas/edit.jsp";
-    Persona p=new Persona();
-    PersonaDAO dao=new PersonaDAO();
+    Empleado p=new Empleado();
+    EmpleadoDAO dao=new EmpleadoDAO();
     int id;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,10 +49,16 @@ public class Controlador extends HttpServlet {
             acceso=add;
         }
         else if(action.equalsIgnoreCase("Agregar")){
-            String dni=request.getParameter("txtDni");
-            String nom=request.getParameter("txtNom");
+            String dni = request.getParameter("txtDni");
+            String nom = request.getParameter("txtNom");
+            String ape = request.getParameter("txtApe");
+            String car = request.getParameter("txtCar");
+            String sex = request.getParameter("selSex");
             p.setDni(dni);
             p.setNom(nom);
+            p.setApe(ape);
+            p.setCar(car);
+            p.setSex(sex);
             dao.add(p);
             acceso=listar;
         }
@@ -64,9 +70,15 @@ public class Controlador extends HttpServlet {
             id=Integer.parseInt(request.getParameter("txtid"));
             String dni=request.getParameter("txtDni");
             String nom=request.getParameter("txtNom");
+            String ape = request.getParameter("txtApe");
+            String car = request.getParameter("txtCar");
+            String sex = request.getParameter("selSex");
             p.setId(id);
             p.setDni(dni);
             p.setNom(nom);
+            p.setApe(ape);
+            p.setCar(car);
+            p.setSex(sex);
             dao.edit(p);
             acceso=listar;
         }
