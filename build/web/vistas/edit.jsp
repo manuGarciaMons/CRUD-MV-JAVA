@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Empleados</title>
     </head>
     <body>
         <div class="container">
@@ -17,7 +17,7 @@
               int id=Integer.parseInt((String)request.getAttribute("idper"));
               Empleado p = (Empleado)dao.list(id);
           %>
-            <h1>Modificar Empleado</h1>
+            <h1>Modificar Informacion del Empleado</h1>
             <form action="Controlador">
                 DNI:<br>
                 <input class="form-control" type="text" name="txtDni" value="<%= p.getDni()%>"><br>
