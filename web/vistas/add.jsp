@@ -16,15 +16,15 @@
         <div class="container">
             <div class="col-lg-6">
                 <h1>Agregar Empleado</h1>
-                <form action="Controlador">
-                    DNI:<br>
-                    <input class="form-control" type="text" name="txtDni"><br>
+                <form action="Controlador" name="validar">
+                    Identificacion:<br>
+                    <input class="form-control" type="number" name="txtDni"  onkeypress="return soloNumeros(event)"><br>
                     Nombres: <br>
-                    <input class="form-control" type="text" name="txtNom"><br>
+                    <input class="form-control" type="text" name="txtNom" onkeypress="return soloLetras(event)"><br>
                     Apellidos: <br>
-                    <input class="form-control" type="text" name="txtApe"><br>
+                    <input class="form-control" type="text" name="txtApe" onkeypress="return soloLetras(event)"><br>
                     Cargo: <br>
-                    <input class="form-control" type="text" name="txtCar"><br>
+                    <input class="form-control" type="text" name="txtCar" onkeypress="return soloLetras(event)" ><br>
                     Sexo: <br>
                     <select name="selSex" class="form-control">
                         <option value="H">Hombre</option>
@@ -34,7 +34,7 @@
                     <a href="Controlador?accion=listar">Regresar</a>
                 </form>
             </div>
-
         </div>
+        <script type="text/javascript" src="javascript/validar.js"></script> 
     </body>
 </html>
