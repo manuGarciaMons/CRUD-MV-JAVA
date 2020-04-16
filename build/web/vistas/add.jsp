@@ -18,7 +18,7 @@
                 <h1>Agregar Empleado</h1>
                 <form action="Controlador" name="validar">
                     Identificacion:<br>
-                    <input class="form-control" type="number" name="txtDni"  onkeypress="return soloNumeros(event)"><br>
+                    <input class="form-control" type="text" name="txtDni"  onkeypress="return soloNumeros(event)"><br>
                     Nombres: <br>
                     <input class="form-control" type="text" name="txtNom" onkeypress="return soloLetras(event)"><br>
                     Apellidos: <br>
@@ -34,7 +34,53 @@
                     <a href="Controlador?accion=listar">Regresar</a>
                 </form>
             </div>
-        </div>
+        </div>          
         <script type="text/javascript" src="javascript/validar.js"></script> 
+        <script>
+          
+        function soloLetras(e){    
+            key =e.keyCode || e.which;
+           
+            teclado = String.fromCharCode(key).toLowerCase();
+            letras =" abcdefghijklmnñopqrstuvwxyz";
+            especiales = "8-37-38-46-164";
+            teclado_especial= false;
+           
+            for(var i in especiales){
+                
+                if(key==especiales[i]){
+                    teclado_especial = true;
+                   break;
+                }
+            }
+            if(letras.indexOf(teclado)== -1 && !teclado_especial){
+                return false;
+            }
+
+        }
+        
+        
+        
+        function soloNumeros(e){
+            key =e.keyCode || e.which;
+            teclado = String.fromCharCode(key);
+
+            numeros ="0123456789";
+            especiales = "8-37-38-46";
+
+            teclado_especial= false;
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial = true;
+                }
+            }
+            if(numeros.indexOf(teclado)== -1 && !teclado_especial){
+                return false;
+            }
+    
+        }
+
+        
+        </script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 
 function soloLetras(e){
     key =e.keyCode || e.which;
-    teclado = String.fromCharCode(key).toLoverCase();
+    teclado = String.fromCharCode(key).toLowerCase();
     
     letras =" abcdefghijklmnñopqrstuvwxyz";
     especiales = "8-37-38-46-164";
