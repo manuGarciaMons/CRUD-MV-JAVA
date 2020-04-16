@@ -16,13 +16,13 @@
         <div class="container">
             <div class="col-lg-6">
                 <h1>Agregar Empleado</h1>
-                <form action="Controlador" name="validar">
+                <form action="Controlador" name="formulario" onsubmit="return revisar()">
                     Identificacion:<br>
-                    <input class="form-control" type="text" name="txtDni"  onkeypress="return soloNumeros(event)"><br>
+                    <input class="form-control" type="text" name="txtDni"  onkeypress="return soloNumeros(event)" required="required"><br>
                     Nombres: <br>
-                    <input class="form-control" type="text" name="txtNom" onkeypress="return soloLetras(event)"><br>
+                    <input class="form-control" type="text" name="txtNom" onkeypress="return soloLetras(event)" required="required"><br>
                     Apellidos: <br>
-                    <input class="form-control" type="text" name="txtApe" onkeypress="return soloLetras(event)"><br>
+                    <input class="form-control" type="text" name="txtApe" onkeypress="return soloLetras(event)" required="required"><br>
                     Cargo: <br>
                     <input class="form-control" type="text" name="txtCar" onkeypress="return soloLetras(event)" ><br>
                     Sexo: <br>
@@ -38,6 +38,25 @@
         <script type="text/javascript" src="javascript/validar.js"></script> 
         <script>
           
+        function revisar() {
+            if(formulario.txtDni == "") { 
+                alert('Ingrese la Identificacion') ; 
+                return false ;
+            }
+            if(formulario.txtNom == "") {
+                alert('Ingrese el Nombre') ; 
+                return false ;
+            }
+            if(formulario.txtApe == "") {
+                alert('Ingrese los Apellidos') ;
+                return false ; 
+            }
+             if(formulario.txtCar == "") {
+                alert('Ingrese el Cargo') ; 
+                return false ;
+            }
+        }
+        
         function soloLetras(e){    
             key =e.keyCode || e.which;
            
@@ -58,9 +77,7 @@
             }
 
         }
-        
-        
-        
+      
         function soloNumeros(e){
             key =e.keyCode || e.which;
             teclado = String.fromCharCode(key);
