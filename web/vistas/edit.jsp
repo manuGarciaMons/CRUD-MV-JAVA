@@ -7,6 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="vistas/javascript/validar.js"></script>
         <title>Empleados</title>
     </head>
     <body>
@@ -20,13 +21,13 @@
             <h1>Modificar Informacion del Empleado</h1>
             <form action="Controlador">
                 DNI:<br>
-                <input class="form-control" type="text" name="txtDni" value="<%= p.getDni()%>"><br>
+                <input class="form-control" type="text" name="txtDni" value="<%= p.getDni()%>" onkeypress="return soloNumeros(event)"><br>
                 Nombres: <br>
-                <input class="form-control" type="text" name="txtNom" value="<%= p.getNom()%>"><br>
+                <input class="form-control" type="text" name="txtNom" value="<%= p.getNom()%>" onkeypress="return soloLetras(event)"><br>
                 Apellidos: <br>
-                <input class="form-control" type="text" name="txtApe" value="<%= p.getApe()%>"><br>
+                <input class="form-control" type="text" name="txtApe" value="<%= p.getApe()%>" onkeypress="return soloLetras(event)"><br>
                 Cargo: <br>
-                <input class="form-control" type="text" name="txtCar" value="<%= p.getCar()%>"><br>
+                <input class="form-control" type="text" name="txtCar" value="<%= p.getCar()%>" onkeypress="return soloLetras(event)"><br>
                 Sexo:  <br>
                 <select name="selSex" class="form-control" selected="<%= p.getSex()%>">
                     <option value="H">Hombre</option>

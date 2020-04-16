@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="vistas/javascript/validar.js"></script>
         <title>Empleados</title>
     </head>
     <body>
@@ -35,69 +36,5 @@
                 </form>
             </div>
         </div>          
-        <script type="text/javascript" src="javascript/validar.js"></script> 
-        <script>
-          
-        function revisar() {
-            if(formulario.txtDni == "") { 
-                alert('Ingrese la Identificacion') ; 
-                return false ;
-            }
-            if(formulario.txtNom == "") {
-                alert('Ingrese el Nombre') ; 
-                return false ;
-            }
-            if(formulario.txtApe == "") {
-                alert('Ingrese los Apellidos') ;
-                return false ; 
-            }
-             if(formulario.txtCar == "") {
-                alert('Ingrese el Cargo') ; 
-                return false ;
-            }
-        }
-        
-        function soloLetras(e){    
-            key =e.keyCode || e.which;
-           
-            teclado = String.fromCharCode(key).toLowerCase();
-            letras =" abcdefghijklmnñopqrstuvwxyz";
-            especiales = "8-37-38-46-164";
-            teclado_especial= false;
-           
-            for(var i in especiales){
-                
-                if(key==especiales[i]){
-                    teclado_especial = true;
-                   break;
-                }
-            }
-            if(letras.indexOf(teclado)== -1 && !teclado_especial){
-                return false;
-            }
-
-        }
-      
-        function soloNumeros(e){
-            key =e.keyCode || e.which;
-            teclado = String.fromCharCode(key);
-
-            numeros ="0123456789";
-            especiales = "8-37-38-46";
-
-            teclado_especial= false;
-            for(var i in especiales){
-                if(key==especiales[i]){
-                    teclado_especial = true;
-                }
-            }
-            if(numeros.indexOf(teclado)== -1 && !teclado_especial){
-                return false;
-            }
-    
-        }
-
-        
-        </script>
     </body>
 </html>
