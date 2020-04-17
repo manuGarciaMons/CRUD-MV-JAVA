@@ -75,7 +75,6 @@
             if(letras.indexOf(teclado)== -1 && !teclado_especial){
                 return false;
             }
-
         }
       
         function soloNumeros(e){
