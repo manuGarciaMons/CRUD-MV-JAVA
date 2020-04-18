@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="vistas/javascript/validar.js"></script>
         <title>Empleados</title>
     </head>
     <body>
@@ -35,6 +36,7 @@
                 </form>
             </div>
         </div>          
+<<<<<<< HEAD
         <script type="text/javascript" src="javascript/validar.js"></script> 
         <script>
           
@@ -98,5 +100,7 @@
 
         
         </script>
+=======
+>>>>>>> b643e5c9a2ccfaf512ce3f2d079a0929c55f861f
     </body>
 </html>
