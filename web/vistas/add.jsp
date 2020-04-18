@@ -25,7 +25,7 @@
                     Apellidos: <br>
                     <input class="form-control" type="text" name="txtApe" onkeypress="return soloLetras(event)" required="required"><br>
                     Cargo: <br>
-                    <input class="form-control" type="text" name="txtCar" onkeypress="return soloLetras(event)" ><br>
+                    <input class="form-control" type="text" name="txtCar" onkeypress="return soloLetras(event)" required="required" ><br>
                     Sexo: <br>
                     <select name="selSex" class="form-control">
                         <option value="H">Hombre</option>
@@ -36,28 +36,9 @@
                 </form>
             </div>
         </div>          
-<<<<<<< HEAD
         <script type="text/javascript" src="javascript/validar.js"></script> 
         <script>
           
-        function revisar() {
-            if(formulario.txtDni == "") { 
-                alert('Ingrese la Identificacion') ; 
-                return false ;
-            }
-            if(formulario.txtNom == "") {
-                alert('Ingrese el Nombre') ; 
-                return false ;
-            }
-            if(formulario.txtApe == "") {
-                alert('Ingrese los Apellidos') ;
-                return false ; 
-            }
-             if(formulario.txtCar == "") {
-                alert('Ingrese el Cargo') ; 
-                return false ;
-            }
-        }
         
         function soloLetras(e){    
             key =e.keyCode || e.which;
@@ -100,7 +81,6 @@
 
         
         </script>
-=======
->>>>>>> b643e5c9a2ccfaf512ce3f2d079a0929c55f861f
+
     </body>
 </html>
