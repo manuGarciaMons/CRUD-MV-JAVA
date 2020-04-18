@@ -5,13 +5,16 @@ import Modelo.Empleado;
 import ModeloDAO.EmpleadoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.json.JsonObject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+@WebServlet("/Controller")
 public class Controlador extends HttpServlet {
 
     String listar="vistas/listar.jsp";
@@ -95,7 +98,32 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String filtro = request.getParameter("filtro");
+        int indFiltro = Integer.parseInt(request.getParameter("indFiltro"));
+        List<Empleado> empleadosFiltrados = this.filtrarEmpleados(indFiltro, filtro);
+        String jsonArray = "";
+        jsonArray += "[";
+        for(Empleado empleado: empleadosFiltrados){
+            jsonArray += "{";
+            jsonArray += "\"id\":\"" + empleado.getId() + "\",";
+            jsonArray += "\"dni\":\"" + empleado.getDni()+ "\",";
+            jsonArray += "\"nombres\":\"" + empleado.getNom()+ "\",";
+            jsonArray += "\"apellidos\":\"" + empleado.getApe()+ "\",";
+            jsonArray += "\"cargo\":\"" + empleado.getCar()+ "\",";
+            jsonArray += "\"sexo\":\"" + empleado.getSex()+"\"";
+            jsonArray += "},";
+        }
+        jsonArray = jsonArray.substring(0, jsonArray.length() - 1);
+        jsonArray += "]";
+        
+        response.getWriter().write(jsonArray);
+    }
+    
+    
+    public List<Empleado> filtrarEmpleados(int indFiltro, String valorFiltro){
+        EmpleadoDAO dao = new EmpleadoDAO();
+        List<Empleado> empleadosFiltrados = dao.buscar(indFiltro, valorFiltro);
+        return empleadosFiltrados;
     }
 
    
