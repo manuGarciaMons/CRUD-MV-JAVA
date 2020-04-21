@@ -31,7 +31,7 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-3">
                     <select name="selFiltro" id="selFiltro" class="form-control">
-                        <option value="1">ID</option>
+                        <option value="1">DNI</option>
                         <option value="2">Nombres</option>
                         <option value="3">Apellidos</option>
                         <option value="4">Cargo</option>

@@ -7,7 +7,7 @@
         <link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>Empleados</title>
     </head>
-    <body>
+    <body  background="img/empleados.png"  style="background-repeat: no-repeat;  ">
         <br>
         <br>
         <div class="container">
