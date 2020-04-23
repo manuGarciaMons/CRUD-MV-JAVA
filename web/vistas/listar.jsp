@@ -75,7 +75,7 @@
                         <td><%= emp.getSex()%></td>
                         <td class="text-center">
                             <a class="btn btn-warning" href="Controlador?accion=editar&id=<%= emp.getId()%>">Editar</a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= emp.getId()%>">Remove</a>
+                            <a class="btn btn-danger" onclick="return window.confirm('¿Esta seguro que desea eliminar el registro?');" href="Controlador?accion=eliminar&id=<%= emp.getId()%>">Remove</a>
                         </td>
                     </tr>
                     <%}%>
